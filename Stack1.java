@@ -24,7 +24,7 @@ public class Stack1 {
 		            scanner.nextLine(); // consume the newline character
 		            switch (choice) {
 		                case 1:
-		                    System.out.print("Enter an element to push onto the stack (int, double, string): ");
+		                    System.out.print("Enter  element to push onto the stack (int, double, string): ");
 		                    String input = scanner.nextLine();
 		                    Object element = parseInput(input);
 		                    stack.push(element);
@@ -48,17 +48,17 @@ public class Stack1 {
 		                    break;
 		                case 4:
 		                    if (stack.isEmpty()) {
-		                        System.out.println("The stack is empty.");
+		                        System.out.println("stack is empty.");
 		                    } else {
-		                        System.out.println("The stack is not empty.");
+		                        System.out.println("stack is not empty.");
 		                    }
 		                    break;
 		                case 5:
-		                    System.out.println("Exiting...");
+		                    System.out.println("Exiting");
 		                    scanner.close();
 		                    return;
 		                default:
-		                    System.out.println("Invalid choice. Please try again.");
+		                    System.out.println(" Please try again.");
 		            }
 		        }
 		    }
