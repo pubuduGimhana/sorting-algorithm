@@ -32,7 +32,7 @@ public class Stack1 {
 		                    break;
 		                case 2:
 		                    if (stack.isEmpty()) {
-		                        System.out.println("The stack is empty. Nothing to pop.");
+		                        System.out.println("stack is empty. Nothing to pop.");
 		                    } else {
 		                        Object poppedValue = stack.pop();
 		                        System.out.println("Popped: " + poppedValue);
@@ -40,7 +40,7 @@ public class Stack1 {
 		                    break;
 		                case 3:
 		                    if (stack.isEmpty()) {
-		                        System.out.println("The stack is empty. Nothing to peek.");
+		                        System.out.println("stack is empty. Nothing to peek.");
 		                    } else {
 		                        Object topValue = stack.peek();
 		                        System.out.println("Peek: " + topValue);
