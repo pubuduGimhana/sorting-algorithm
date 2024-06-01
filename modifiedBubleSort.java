@@ -1,31 +1,52 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        # Track if any swaps were made during this pass
-        swapped = False
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                # Swap the elements
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                swapped = True
-        # If no swaps were made, the array is already sorted
-        if not swapped:
-            break
+package sortingAlgorithm;
+
+import java.util.Scanner;
+
+public class ModifiedBubbleSort {
+
+    public static void bubbleSort(int[] array) {
+        int length = array.length;
+        for (int i = 0; i < length - 1; i++) {
+            boolean swapped = false;
+            for (int j = 0; j < length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numbers separated by spaces: ");
+        String userInput = scanner.nextLine();
+
+        try {
+            String[] inputStrings = userInput.split(" ");
+            int[] numbersArray = new int[inputStrings.length];
+            for (int i = 0; i < inputStrings.length; i++) {
+                numbersArray[i] = Integer.parseInt(inputStrings[i]);
+            }
+
+            bubbleSort(numbersArray);
+
+            System.out.println("Sorted array: ");
+            for (int number : numbersArray) {
+                System.out.print(number + " ");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid list of integers.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
 
 
-def main():
-    # Get user input
-    user_input = input("Enter the  numbers separated by spaces: ")
 
-    # Convert input string to a list of integers
-    arr = list(map(int, user_input.split()))
-
-    # Perform bubble sort
-    bubble_sort(arr)
-
-    # Print the sorted array
-    print("Sorted  array:", arr)
-
-
-if __name__ == "__main__":
-    main()
